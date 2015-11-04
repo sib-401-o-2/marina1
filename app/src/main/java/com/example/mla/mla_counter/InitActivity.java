@@ -10,6 +10,7 @@ public class InitActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
-        startActivity(new Intent(this, RegistrationActivity.class));
+        //startActivity(new Intent(this, RegistrationActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
     }
 }

@@ -19,33 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Имя");
 
-//        DatabaseHelper myDbHelper = new DatabaseHelper(this);
-//
-//        try {
-//            myDbHelper.createDataBase();
-//        } catch (IOException ioe) {
-//            throw new Error("Unable to create database");
-//        }
-//
-//        try {
-//            myDbHelper.openDataBase();
-//        }catch(SQLException sqle){
-//            throw sqle;
-//        }
-//
-//        Cursor c = myDbHelper.getAll();
-//
-//        c.moveToFirst();
-//
-//        if (c.moveToFirst()) {
-//            while ( !c.isAfterLast() ) {
-//                Toast.makeText(this, c.getString(1), Toast.LENGTH_LONG).show();
-//                c.moveToNext();
-//            }
-//        }
-
-
-
     }
 
     @Override

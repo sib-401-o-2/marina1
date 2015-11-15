@@ -7,8 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +38,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if(dbExist){
 
         }else{
-            //вызывая этот метод создаем пустую базу, позже она будет перезаписана
             this.getReadableDatabase();
 
             try {
@@ -110,13 +107,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
+    public Cursor getProductsByName(String name){
+        return myDataBase.rawQuery("SELECT * FROM Food WHERE NameSearch LIKE '%"+name.toLowerCase()+"%'",null);
+    }
+
 
     public Cursor getAll(){
         return myDataBase.query(false,"Food",null,null,null,null,null,null,"10");
     }
 
-
-    // Здесь можно добавить вспомогательные методы для доступа и получения данных из БД
-    // вы можете возвращать курсоры через "return myDataBase.query(....)", это облегчит их использование
-    // в создании адаптеров для ваших view
 }

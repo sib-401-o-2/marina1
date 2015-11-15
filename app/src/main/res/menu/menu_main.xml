@@ -4,18 +4,13 @@
     tools:context="com.example.mla.mla_counter.MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_cart"
-        android:orderInCategory="1"
-        android:title="edit"
+        android:id="@+id/progress"
+        android:icon="@drawable/progress"
+        android:title="Ваш прогресс"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/c"
-        android:orderInCategory="100"
-        android:title="back"
+        android:id="@+id/edit_info"
+        android:icon="@drawable/edit_user"
+        android:title="Редактировать профиль"
         app:showAsAction="always"/>
 </menu>

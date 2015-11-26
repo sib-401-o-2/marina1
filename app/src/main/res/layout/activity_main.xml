@@ -7,18 +7,15 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
 
-
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="04.10.2015"
                 android:gravity="center_horizontal"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:id="@+id/date"
                 />
 
@@ -26,29 +23,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/date"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
-                >
+                android:background="#fafafa"
+                android:id="@+id/amounts_container">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Необходимо съесть:"
-                    android:id="@+id/required_label"
-                    />
+                    android:text="Суточная норма:"
+                    android:id="@+id/required_label"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:text="1560 ккал"
                     android:id="@+id/required_amount"
-                    android:layout_toRightOf="@id/required_label"
-                    />
+                    android:layout_toRightOf="@id/required_label"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Съедено:"
+                    android:text="Сегодня:"
                     android:id="@+id/current_label"
                     android:layout_below="@id/required_label"/>
                 <TextView
@@ -56,16 +51,184 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_alignLeft="@id/required_amount"
-                    android:text="000 ккал"
                     android:id="@+id/current_amount"
                     android:layout_toRightOf="@id/current_label"
                     android:layout_below="@id/required_label"/>
 
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chart_container"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_below="@+id/amounts_container">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chart_info"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/protein_label"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/protein_label"
+                        android:id="@+id/fat_label"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fat_label"
+                        android:id="@+id/carbohydrate_label"/>
+
+                </RelativeLayout>
+
+                <org.eazegraph.lib.charts.PieChart
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/piechart"
+                    android:layout_centerVertical="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:layout_toLeftOf="@+id/chart_info"
+                    android:layout_marginRight="15dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/breakfast_container"
+                android:layout_below="@id/chart_container"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/breakfast_labels">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/breakfast_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:text="Завтрак"/>
+
+                    <ImageButton
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/add"
+                        android:adjustViewBounds="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/breakfast_label"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/add_breakfast_btn"/>
+
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/breakfast_table"
+                    android:layout_below="@+id/breakfast_labels"
+                    android:layout_marginTop="10dp">
+                </TableLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lunch_container"
+                android:layout_below="@id/breakfast_container"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lunch_labels">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lunch_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:text="Обед"/>
+
+                    <ImageButton
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/add"
+                        android:adjustViewBounds="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/lunch_label"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/add_lunch_btn"/>
+
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lunch_table"
+                    android:layout_below="@+id/lunch_labels"
+                    android:layout_marginTop="10dp">
+                </TableLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/dinner_container"
+                android:layout_below="@id/lunch_container"
+                android:layout_marginTop="30dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dinner_labels">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dinner_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_centerVertical="true"
+                        android:text="Ужин"/>
+
+                    <ImageButton
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:background="@drawable/add"
+                        android:adjustViewBounds="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/dinner_label"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/add_dinner_btn"/>
+
+                </RelativeLayout>
+
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dinner_table"
+                    android:layout_below="@+id/dinner_labels"
+                    android:layout_marginTop="10dp">
+                </TableLayout>
 
             </RelativeLayout>
 
         </RelativeLayout>
 
-
     </ScrollView>
+
 </RelativeLayout>

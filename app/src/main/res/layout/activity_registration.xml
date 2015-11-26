@@ -11,7 +11,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_marginTop="16dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp">
 
@@ -105,15 +105,48 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Мужчина"/>
+                    android:text="Мужчина"
+                    android:id="@+id/male"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="60dp"
-                    android:text="Женщина"/>
+                    android:text="Женщина"
+                    android:id="@+id/female"/>
 
             </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/gender_container"
+                android:id="@+id/phys_activity_container">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Физическая активность"
+                    android:id="@+id/phys_activity_label"/>
+
+                <ImageButton
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_toRightOf="@+id/phys_activity_label"
+                    android:background="@drawable/edit_icon"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/phys_activity_edit"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/phys_activity_label"
+                    android:id="@+id/phys_activity"/>
+
+            </RelativeLayout>
 
             <Button
                 android:layout_width="fill_parent"
@@ -122,7 +155,8 @@
                 android:text="Сохранить"
                 android:textColor="#ffffff"
                 android:background="#25CC73"
-                android:layout_below="@id/gender_container"/>
+                android:layout_below="@+id/phys_activity_container"
+                android:id="@+id/save_profile"/>
 
 
         </RelativeLayout>

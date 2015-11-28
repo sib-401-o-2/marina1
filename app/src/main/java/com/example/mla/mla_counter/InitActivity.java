@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
 
 import java.io.IOException;
 
@@ -32,11 +34,16 @@ public class InitActivity extends Activity {
         AppSingleton.getInstance().extractUserDataFromStore();
         AppSingleton.getInstance().extractDailyProductsFromStore();
 
-        if (AppSingleton.getInstance().user == null){
-            startActivity(new Intent(this, RegistrationActivity.class));
-        }
-        else{
-            startActivity(new Intent(this, MainActivity.class));
-        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (AppSingleton.getInstance().user == null){
+                    startActivity(new Intent(InitActivity.this, RegistrationActivity.class));
+                }
+                else{
+                    startActivity(new Intent(InitActivity.this, MainActivity.class));
+                }
+            }
+        }, 2000);
     }
 }

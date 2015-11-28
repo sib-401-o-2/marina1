@@ -25,7 +25,6 @@
                 android:layout_below="@+id/date"
                 android:layout_marginTop="20dp"
                 android:layout_centerHorizontal="true"
-                android:background="#fafafa"
                 android:id="@+id/amounts_container">
 
                 <TextView

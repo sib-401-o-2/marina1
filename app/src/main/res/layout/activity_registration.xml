@@ -154,7 +154,7 @@
                 android:layout_marginTop="35dp"
                 android:text="Сохранить"
                 android:textColor="#ffffff"
-                android:background="#25CC73"
+                android:background="#25b45b"
                 android:layout_below="@+id/phys_activity_container"
                 android:id="@+id/save_profile"/>
 

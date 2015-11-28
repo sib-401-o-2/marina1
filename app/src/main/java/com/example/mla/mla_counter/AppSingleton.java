@@ -48,6 +48,7 @@ public class AppSingleton {
             daily_products.breakfast = new ArrayList<Product>();
             daily_products.lunch = new ArrayList<Product>();
             daily_products.dinner = new ArrayList<Product>();
+            pushDailyProductsToStore();
         }
     }
 

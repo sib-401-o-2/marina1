@@ -17,6 +17,8 @@
         android:layout_below="@+id/numberPicker1"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="98dp"
+        android:background="#ffffffff"
+        android:textColor="#4f9fff"
         android:layout_toRightOf="@+id/numberPicker1"
         android:text="Отмена" />
 
@@ -26,6 +28,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
+        android:background="#ffffffff"
+        android:textColor="#4f9fff"
         android:layout_marginRight="16dp"
         android:layout_toLeftOf="@+id/numberPicker1"
         android:text="Добавить" />
